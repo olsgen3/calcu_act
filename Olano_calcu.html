@@ -1,0 +1,87 @@
+<head>
+	<meta charset="utf-8">
+	<title> CALCULATOR</title>
+</head>
+
+<body background-color="blue">
+	
+<input type="number" placeholder="" id="numdisplay">
+<br>
+<br>
+<button onclick="Putval(this)">C</button>
+<button onclick="Putval(this)">1</button>
+<button onclick="Putval(this)">2</button>
+<button onclick="Putval(this)">3</button>
+<button onclick="Putval(this)">4</button>
+<br>
+<button onclick="Putval(this)">5</button>
+<button onclick="Putval(this)">6</button>
+<button onclick="Putval(this)">7</button>
+<button onclick="Putval(this)">8</button>
+<button onclick="Putval(this)">9</button>
+</br>
+<button id="nplus" onclick="ADD()">+</button>
+<button id="nminus" onclick="SUBTRACT()">-</button>
+<button id="nmultiply" onclick="MULTIPLY()">*</button>
+<button id="nmodulo" onclick="DIVIDE()">/</button>
+<button id="nequals" onclick="EQUALS()">=</button>
+
+
+<script type="text/javascript">
+	let num= document.getElementById('numdisplay');
+	let numberHolder;
+	let optr;
+
+	function Putval(e){
+		num.value += e.innerHTML;
+	}
+
+	function ADD(){
+		optr = "+";
+		numberHolder = parseInt(num.value);
+		num.value = "";
+	}
+
+	function SUBTRACT(){
+		optr = "-";
+		numberHolder = parseInt(num.value);
+		num.value = "";
+	}
+
+	function MULTIPLY(){
+		optr = "*";
+		numberHolder = parseInt(num.value);
+		num.value = "";
+	}
+
+	function DIVIDE(){
+		optr = "/";
+		numberHolder = parseInt(num.value);
+		num.value = "";
+	}
+	function EQUALS(){
+		switch (optr){
+			case "+":
+					num.value = numberHolder + parseInt(num.value);
+					break;
+			case "-":
+					num.value = numberHolder - parseInt(num.value);
+					break;	
+			case "*":
+					num.value = numberHolder * parseInt(num.value);
+					break;	
+			case "%":
+					num.value = numberHolder / parseInt(num.value);
+					break;
+
+			default:
+					console.log('no result');
+					break;				
+		}
+
+
+	}
+
+
+</script>
+</body>
